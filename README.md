@@ -18,6 +18,7 @@ Demarrage d'elastic dans docker :
 #### Connexion
 Après telechargement du fichier de certificat de sécurité alors la connexion est refusé : 
  - `curl --cacert http_ca.crt -u elastic https://localhost:9200`
+
 Ajout de l'inactivation de la réponse d'authentification afin d'utiliser la version de dev : 
  - `curl --ssl-revoke-best-effort --cacert http_ca.crt -u elastic https://localhost:9200`
 
@@ -25,4 +26,7 @@ Ajout de l'inactivation de la réponse d'authentification afin d'utiliser la ver
 Instalation de Kibana via la commande :
  - `docker pull docker.elastic.co/kibana/kibana:8.7.1`
  - `docker run --name kib-01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.7.1`
+
+Le token a expiré et j'ai du le reset via la commande suivante :
+- `docker exec -it es-node01 /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana` 
 
