@@ -359,5 +359,4 @@ PUT /_snapshot/my_backup
   }
 }
 ```
-
-![[Pasted image ./DiagrammeELK.png]]
+![Pasted image DiagrammeELK.png](./DiagrammeELK.png)
